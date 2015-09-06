@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% block title %}Logged In{% endblock %}
+{% block content %}
+    <h3>User data:</h3>
+    <table>
+        <tr class="odd"><th>Facebook Id:</th> <td>{{ facebook_id }}</td></tr>
+        <tr class="even"><th>Username:</th> <td>{{ user.username }}</td></tr>
+        <tr class="odd"><th>Photo:</th> <td><img src="http://graph.facebook.com/{{ facebook_id }}/picture/"></td></tr>
+        <tr class="even"><th>First name:</th> <td>{{ user.first_name|default:"Not provided" }}</td></tr>
+        <tr class="odd"><th>Last name:</th> <td>{{ user.last_name|default:"Not provided" }}</td></tr>
+        <tr class="even"><th>Is active:</th> <td>{{ user.is_active }}</td></tr>
+    </table>
+    <a href="/logout/">Log out</a>
+{% endblock %}

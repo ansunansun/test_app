@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load url from future %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <a href="{% url "social:begin" "facebook" %}">Log in</a>
+{% endblock %}
