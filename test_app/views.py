@@ -53,10 +53,10 @@ def logout(request):
 from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def deauth(request):
-    # data = request.POST
-    # if 'signed_request' in data:
-    #     parsed_data = load_signed_request(data['signed_request'])
-    #     facebook_user = UserSocialAuth.objects.get(uid=parsed_data['user_id'])
-    #     facebook_user.user.is_active = False
-    #     facebook_user.user.save()
+    data = request.POST
+    if 'signed_request' in data:
+        parsed_data = load_signed_request(data['signed_request'])
+        facebook_user = UserSocialAuth.objects.get(uid=parsed_data['user_id'])
+        facebook_user.user.is_active = False
+        facebook_user.user.save()
     return HttpResponseRedirect('/')

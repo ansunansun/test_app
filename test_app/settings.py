@@ -103,5 +103,5 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookOAuth2',
 )
 
-
-# SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = ['first_name', 'last_name']
+INACTIVE_USER_LOGIN = True
+INACTIVE_USER_URL = '/'
